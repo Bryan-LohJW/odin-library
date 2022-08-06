@@ -1,21 +1,136 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+.container {
+    display: flex;
+}
+
 .shelf {
-    background-image: url(images/bookshelf.png);
-    background-size: contain;
-    background-repeat: no-repeat;
+    background-image: linear-gradient(grey, lightgrey);
     border: 1px solid black;
-    height: 800px;
-    width: 480px;
+    min-height:300px;
+    width: 50vw;
 }
 
 .book {
+    position: relative;
     background-image: url(images/book.png);
     background-size: contain;
     background-repeat: no-repeat;
-    height: 100px;
-    width: 75px;
+    width: 30%;
+    aspect-ratio: 0.8;
     border: 1px solid salmon;
 }
 
 .read {
     filter: blur(5px);
+}
+
+.title {
+    position:absolute;
+    width: 60%;
+    height:18%;
+    top: 15%;
+    left: 20%;
+    border: 1px solid red;
+
+    font-size: 3rem;
+    white-space: wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.author {
+    position:absolute;
+    width: 60%;
+
+    top: 40%;
+    left: 20%;
+
+    font-size: 3rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+}
+
+.pages {
+    position:absolute;
+    top: 85%;
+    left: 75%;
+
+    font-size: 2rem;
+}
+
+.readButton {
+    position: absolute;
+    top: 90%;
+    height:10%;
+    width: 20%;
+}
+
+.readButton::after {
+    content: "Read";
+    font-size: 1rem;
+}
+
+.removeButton {
+    position: absolute;
+    left: 93.5%;
+    width: 5%;
+    background-color: red;
+}
+
+.removeButton::after {
+    position: relative;
+    right: 100%;
+    content:'X';
+    justify-self: center;
 }

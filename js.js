@@ -31,36 +31,31 @@ Book.prototype.toLibrary = function() {
     for (let i = 0; i < library.length; i++) {
         const container = document.createElement('div');
         container.classList.add(`book`);
-        container.classList.add(`number${i}`);
 
         const title = document.createElement('p');
         title.classList.add(`title`);
-        title.classList.add(`number${i}`);
-        title.textContent = this.title;
+        title.textContent = library[i].title;
 
         const author = document.createElement('p');
         author.classList.add(`author`);
-        author.classList.add(`number${i}`);
-        author.textContent = this.author;
+        author.textContent = library[i].author;
 
         const pages = document.createElement('p');
         pages.classList.add(`pages`);
-        pages.classList.add(`number${i}`);
-        pages.textContent = this.pages;
+        pages.textContent = library[i].pages;
 
         const read = document.createElement('button');
         read.classList.add(`readButton`);
-        read.classList.add(`number${i}`);
         read.addEventListener('click', (e) => {
             container.classList.toggle('read');
         })
 
         const remove = document.createElement('button');
-        remove.value = this.bookNum;
+        library[i].bookNum = i;
+        remove.value = library[i].bookNum;
         remove.classList.add(`removeButton`);
-        remove.classList.add(`number${i}`);
         remove.addEventListener('click', (e) => {
-            library.splice(this.bookNum, 1);
+            library.splice(library[i].bookNum, 1);
             this.addBook();
         })
 

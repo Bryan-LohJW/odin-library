@@ -8,10 +8,28 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="shelf">
-        <div class="book">
-            <button class="read"></button>
-            <button class="delete"></button>
+    <div class="container">
+        <div class="shelf">
+        </div>
+        <div class="formContainer">
+            <form onsubmit="createBook(); return false" action="" method="">
+                <fieldset>
+                    <legend>Add a book</legend>
+                        <div class="set">
+                            <label for="title">Title:</label>
+                            <input type="text" id="title" name="title" placeholder="My life" minLength="1" required>
+                        </div>
+                        <div class="set">
+                            <label for="author">Author:</label>
+                            <input type="text" id="author" name="author" placeholder="L Bryan" minLength="1" required>
+                        </div>
+                        <div class="set">
+                            <label for="pages">Pages:</label>
+                            <input type="number" id="pages" name="pages" value="0" min="1" required>
+                        </div>
+                        <button type="submit">Submit</button>
+                </fieldset>
+            </form>
         </div>
     </div>
     <script src="js.js"></script>
